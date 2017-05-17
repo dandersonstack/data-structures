@@ -35,8 +35,6 @@ Graph.prototype.removeNode = function(node) {
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
   for(let currEdge in this.edgeList) {
-    console.log(this.edgeList[currEdge]);
-    console.log([fromNode, toNode]);
     if(JSON.stringify(this.edgeList[currEdge]) == JSON.stringify([fromNode,toNode]) ||
        JSON.stringify(this.edgeList[currEdge]) == JSON.stringify([toNode,fromNode])) {
       return true;
