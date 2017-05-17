@@ -53,8 +53,6 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
 for(let currEdge in this.edgeList) {
-    console.log(this.edgeList[currEdge]);
-    console.log([fromNode, toNode]);
     if(JSON.stringify(this.edgeList[currEdge]) == JSON.stringify([fromNode,toNode]) ||
        JSON.stringify(this.edgeList[currEdge]) == JSON.stringify([toNode,fromNode])) {
       this.edgeList.splice(currEdge, 1);
