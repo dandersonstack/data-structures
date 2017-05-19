@@ -2,10 +2,7 @@ var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
   newTree.parent = null;
-
-  // your code here
-  newTree.children = [];  // fix me
-
+  newTree.children = [];
   for(let key in treeMethods) {
     newTree[key] = treeMethods[key];
   }
@@ -30,6 +27,13 @@ treeMethods.contains = function(target) {
   }
   return result;
 };
+
+treeMethods.traverse = function(callback) {
+  callback();
+  for(let index = 0; index < this.children.length; index++) {
+    this.children[index].traverse(callback);
+  }
+}
 
 treeMethods.removeFromParent = function() {
   let foundIndex = null;
