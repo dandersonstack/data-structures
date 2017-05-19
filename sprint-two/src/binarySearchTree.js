@@ -50,6 +50,21 @@ setBSTMethods.depthFirstLog = function(callback) {
   if(this.right) {
     this.right.depthFirstLog(callback);
   }
+}
+
+setBSTMethods.breadthFirstLog = function(callback) {
+  let queue = new Queue();
+  queue.enqueue(this);
+  while(queue.size() > 0) {
+    let curr = queue.dequeue();
+    callback(curr.value);
+    if(curr.left) {
+      queue.enqueue(curr.left);
+    }
+    if(curr.right) {
+      queue.enqueue(curr.right);
+    }
+  }
 
 }
 
